@@ -26,37 +26,20 @@ const  button = document.querySelector('#ButtonInput');
 //кнопка подтверждения 
 button.addEventListener('click', (event) => {
     //event.preventDefault();
-    console.log(InputTextField1.value);
-    console.log(InputTextField2.value);
+    //console.log(InputTextField1.value);
+    //console.log(InputTextField2.value);
     //InputTextField.value = "";
     //duplicateField1.textContent = InputTextField1.value;
     //duplicateField2.textContent = InputTextField2.value;
     minValue=parseInt(InputTextField1.value);
     maxValue=parseInt(InputTextField2.value);
 
-    console.log('Введеное MinValue ' + minValue);
-    console.log('Введеное MaxValue ' + maxValue);
+    //console.log('Введеное MinValue ' + minValue);
+    //console.log('Введеное MaxValue ' + maxValue);
     startGame();
 })
 
-//document.addEventListener('DOMContentLoaded', function() {
-     // получим кнопку id="btn" с помощью которой будем открывать модальное окно
-  //const btn = document.querySelector('#btn1');
-  //// активируем контент id="modal" как модальное окно
-  //const modal = new bootstrap.Modal(document.querySelector('#modal'));
-  // при нажатии на кнопку
-  //btn.addEventListener('click', function() {
-    
-    // открываем модальное окно
-    //modal.show();
-//});
-//});
 
-//document.getElementById('btn').addEventListener('click', function () {
-    //getElementById('#btn').addEventListener('click', function() {
-    //    document.getElementById('btn1').addEventListener('click', function () {
-    //modal.show()
-//});
 
 //начало игры после заргузки страницы
 addEventListener("DOMContentLoaded", (event) => {
@@ -73,14 +56,14 @@ function startGame() {
     if (isNaN(minValue)) {
        minValue = 0
     };
-    console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+    //console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
     //maxValue = parseInt(prompt('Максимальное знание числа для игры', '100')); //добавили присвоение по дефолту//исправить надо не реагирует на ноль
-    console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
+    //console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
     //Надо подумать как сравнивать знаячени через ИЛИ
     if (isNaN(maxValue)) {
        maxValue = 100
     };
-    console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
+    //console.log('Максимальное число '+ maxValue);//Вывод в консоль для проверки
 
     //Сравнение по разрешенному максимальному и минимальному значению через тернарный оператор
     minValue = (minValue < -999) ? -999 : minValue;
@@ -89,15 +72,15 @@ function startGame() {
     maxValue = (maxValue > 999) ? 999 : maxValue;
     maxValue = (maxValue < -999) ? -999 : maxValue;
     //if (maxValue == 0)  maxValue = 0; // поменяли условие проверки и исправления на дефолт
-    console.log('Максимальное число для проверки границ '+ maxValue);//Вывод в консоль для проверки
+    //console.log('Максимальное число для проверки границ '+ maxValue);//Вывод в консоль для проверки
 
     if (minValue > maxValue) { // смена если меньшее больше больщего через промежуточную переменную. Знаю что некрасиво, но пока врменное решение
        minValueError = minValue;
        minValue = maxValue;
        maxValue = minValueError;
-       console.log('обменное число'+ minValueError); //Вывод в консоль для проверки
-       console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
-       console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
+       //console.log('обменное число'+ minValueError); //Вывод в консоль для проверки
+       //console.log('Минимальное число '+ minValue); //Вывод в консоль для проверки
+       //console.log('Максимальное число '+maxValue);//Вывод в консоль для проверки
     }
 
     //duplicateField1.textContent = minValue;
@@ -116,7 +99,7 @@ function startGame() {
     const answerField = document.getElementById('answerField');
     orderNumberField.innerText = orderNumber;
     //answerField.innerText = `Вы загадали число ${answerNumber }?`;
-    console.log(parceNumber(answerNumber));
+    //console.log(parceNumber(answerNumber));
     answerField.textContent = "Вы загадали число " + parceNumber(answerNumber);
 
     //проверка на равенсто максимума и минимума, можно попробовать через тернанрный, при изменении попробую сменить
@@ -155,7 +138,7 @@ document.getElementById('btnOver').addEventListener('click', function () {
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             //answerField.innerText = `Вы загадали число ${answerNumber }?`;
-            console.log(parceNumber(answerNumber));
+            //console.log(parceNumber(answerNumber));
             answerField.textContent = "Вы загадали число " + parceNumber(answerNumber);
         }
     }
@@ -174,12 +157,12 @@ document.getElementById('btnLess').addEventListener('click', function () {
             gameRun = false;
         } else {
             maxValue = answerNumber -1;
-            console.log(maxValue);
+            //console.log(maxValue);
             answerNumber  = Math.floor((minValue + maxValue) / 2);
             orderNumber++;
             orderNumberField.innerText = orderNumber;
             //answerField.innerText = `Вы загадали число ${answerNumber }?`;
-            console.log(parceNumber(answerNumber));
+            //console.log(parceNumber(answerNumber));
             answerField.textContent = "Вы загадали число " + parceNumber(answerNumber);
         }
     }
