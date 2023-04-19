@@ -44,9 +44,6 @@ button.addEventListener('click', (event) => {
 //начало игры после заргузки страницы
 addEventListener("DOMContentLoaded", (event) => {
     startGame();
-
-   
-
 })
 
 // создадим через функцию старт игры, пока как получилось
@@ -107,8 +104,6 @@ function startGame() {
        answerField.innerText = `Легко.Вы загадали число ${answerNumber }?`;
        gameRun = false;
     }
-
-
 };
 
 //повтор игры
@@ -129,7 +124,6 @@ document.getElementById('btnOver').addEventListener('click', function () {
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
-
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
@@ -152,7 +146,6 @@ document.getElementById('btnLess').addEventListener('click', function () {
             const answerPhrase = (phraseRandom === 1) ?
                 `Вы загадали неправильное число!\n\u{1F914}` :
                 `Я сдаюсь..\n\u{1F92F}`;
-
             answerField.innerText = answerPhrase;
             gameRun = false;
         } else {
@@ -187,27 +180,22 @@ document.getElementById('btnEqual').addEventListener('click', function () {
 })
 
 
-//закроем времено
-//document.onclick = function() {
-//    document.submit = function() {
-
-
 //сделаем чеерз функцию
 function parceNumber(answerNumber) {   
     // тело обработчика
-    console.log('Это тот блок для проваерки наших действий');
+    //console.log('Это тот блок для проваерки наших действий');
 
     //опреедлим еще знак
     NumberZnak = (answerNumber<0) ? 'Минус' : '';
-    console.log('NumberZnak ' + NumberZnak);
+    //console.log('NumberZnak ' + NumberZnak);
 
     //определим длину числа
     str = Math.abs(answerNumber);
     answerPhrase = '';
     str=str.toString();
-    console.log('answerNumber' + answerNumber);
-    console.log('Строка значения' + str);
-    console.log('Длина значения' + str.length);
+    //console.log('answerNumber' + answerNumber);
+    //console.log('Строка значения' + str);
+    //console.log('Длина значения' + str.length);
     
     //проверка на ноль
     if (answerNumber == 0) {
@@ -254,7 +242,6 @@ function parceNumber(answerNumber) {
                 str.length = 2;
                 str = (str % 100);
                 break;
-
             default: 
                 str.length = 2;
                 str = (str % 100);
@@ -263,12 +250,12 @@ function parceNumber(answerNumber) {
     };
 
     str=str.toString();
-    console.log('Строка значения ' + str);
-    console.log('Длина значения ' + str.length);
+    //console.log('Строка значения ' + str);
+    //console.log('Длина значения ' + str.length);
 
     //определяем десчтки
     if (str.length == 2) {
-        console.log('str ' + str);
+        //console.log('str ' + str);
         switch (Math.trunc(str)){ //выбираем от 10 до 19
             case 10: answerPhrase = answerPhrase + 'десять';
                 str.length = 0;
@@ -341,7 +328,7 @@ function parceNumber(answerNumber) {
 
             };
         };
-       console.log(answerPhrase);  
+       //console.log(answerPhrase);  
     };
 
     //Работаем по единицам
@@ -381,12 +368,12 @@ function parceNumber(answerNumber) {
             default:
                 str.length = 0;
         }
-    console.log(NumberZnak + answerPhrase); 
+    //console.log(NumberZnak + answerPhrase); 
     //  console.log(answerPhrase);
     };
 
     //надо проверить на строку на длину
-    console.log('длина строки ответа' + (NumberZnak + answerPhrase).length);
+    //console.log('длина строки ответа' + (NumberZnak + answerPhrase).length);
     // конец тела обработчика
     //console.log('передаем из функции '+NumberZnak + answerPhrase); 
     return ((NumberZnak + answerPhrase).length <20) ? (NumberZnak + answerPhrase) : answerNumber;
