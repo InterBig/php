@@ -114,7 +114,7 @@ const personGenerator = {
         return obj.list[prop];
     },
 
-    randomWorkNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
+   // randomWorkNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
     randomWorkValue: function (json,maxWork,minWork) {
         const obj = JSON.parse(json);

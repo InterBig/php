@@ -1,0 +1,49 @@
+/*добавляем свои стили*/
+body {
+    max-width: 1200px;
+    min-width: 420px;
+    position: relative;
+    margin: auto;   
+    
+}
+ 
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    min-width: 420px;
+    min-height: 150px;
+    margin: auto;
+    opacity: 0.9;
+    top: 50px;
+    border: 5px solid #c7e2fa;
+    background-color: #e9f3fc;
+    }
+
+
+article {
+    /*width: 768px;*/
+    max-width: 1000px;
+    min-width: 420px;
+    margin: 0 auto 32px;
+    padding: 6px 15px;
+    border-bottom: 1px solid rgb(128, 128, 128);
+}
+
+.card-title {
+    position: relative;
+    top:auto; 
+    margin: auto;
+    text-align: center; 
+    color: rgb(77, 13, 180);
+}
+
+#firstNameOutput, #secondNameOutput, #surnameOutput {
+    color: rgb(0, 0, 0);
+    font-size: 1.4em;
+}
+ #birthDayOutput, #birthYearOutput, #genderOutput, #workOutput {
+    color: rgb(6, 10, 245);
+    font-size: 1.1em;
+ }
