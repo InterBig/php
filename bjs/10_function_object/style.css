@@ -47,3 +47,7 @@ article {
     color: rgb(6, 10, 245);
     font-size: 1.1em;
  }
+
+.Task {
+    text-align: center; 
+}
