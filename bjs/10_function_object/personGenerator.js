@@ -149,7 +149,7 @@ const personGenerator = {
         //return (gender == 'Мужчина') ? this.randomValue(this.firstNameMaleJson)+'ович' : this.randomValue(this.firstNameMaleJson)+'вна';
         //попробуем по другому
        // return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,7,1) : this.randomWorkValue(this.secondNameJson,9,5);
-       return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,7,1) : this.randomWorkValue(this.secondNameJson,16,10);
+       return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,9,1) : this.randomWorkValue(this.secondNameJson,16,10);
 
        
     },
@@ -157,7 +157,7 @@ const personGenerator = {
     randomWork: function() {
 
         //return this.randomWorkValue(this.workJson,10,1);
-        return (gender == 'Мужчина') ? this.randomWorkValue(this.workJson,9,1) : this.randomWorkValue(this.workJson,10,5);
+        return (gender == 'Мужчина') ? this.randomWorkValue(this.workJson,7,1) : this.randomWorkValue(this.workJson,10,5);
 
     },  
 
@@ -189,12 +189,7 @@ const personGenerator = {
             default:
                 return this.randomIntNumber(30,1) + ' ' + month;   
         }
-       // if (this.randomValue(this.monthJson) == 'Января'||'Марта'||'Мая'||'Июля') {
-       //     return this.randomValue(this.monthJson)+'33';
-//
-       // }
-
-        //return this.randomValue(this.monthJson);
+       
         return month;
 
     },
