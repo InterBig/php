@@ -68,6 +68,7 @@ const personGenerator = {
         }
     }`,
 
+    //список профессий, с 1 по 4 мужские, с 5 по 7 универсальные, с 8 по 10 женские
     workJson: `{
         "count": 10,
         "list": {     
@@ -114,7 +115,8 @@ const personGenerator = {
         return obj.list[prop];
     },
 
-   // randomWorkNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
+   // Создадим функцию чтобы можно было передавать диапазон. Название делал для определния работы, хотя использую и для других целей. 
+   //Надо возможно объеденить randomWorkValue с randomValue 
 
     randomWorkValue: function (json,maxWork,minWork) {
         const obj = JSON.parse(json);
@@ -122,7 +124,7 @@ const personGenerator = {
         //const prop = 'id_6';  // this = personGenerator
         return obj.list[prop];
     },
-
+// Функция для гендера
     randomGender: function() {
         gender = (this.randomIntNumber(1,0) < 0.5) ? this.GENDER_MALE : this.GENDER_FEMALE;
         //return (this.randomIntNumber(1,0) < 0.5) ? this.GENDER_MALE : this.GENDER_FEMALE;
@@ -130,6 +132,7 @@ const personGenerator = {
 
     },
 
+    //Функция определения имени от гендера
     randomFirstName: function(gender) {
 
         //return this.randomValue(this.firstNameMaleJson);
@@ -137,23 +140,26 @@ const personGenerator = {
 
     },
 
-
+    // функция фамилиии от гендера
      randomSurname: function(gender) {
 
        // return this.randomValue(this.surnameJson);
        return (gender == 'Мужчина') ? this.randomValue(this.surnameJson) : this.randomValue(this.surnameJson)+'а';
       
     },
+
+    // функция отчетсва от гендера. 
      randomSecondName: function(gender) {
         //надо сделать более сложные условия, отчества не атк просто
         //return (gender == 'Мужчина') ? this.randomValue(this.firstNameMaleJson)+'ович' : this.randomValue(this.firstNameMaleJson)+'вна';
+        
         //попробуем по другому
-       // return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,7,1) : this.randomWorkValue(this.secondNameJson,9,5);
-       return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,9,1) : this.randomWorkValue(this.secondNameJson,16,10);
+        return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,9,1) : this.randomWorkValue(this.secondNameJson,16,10);
 
        
     },
 
+    //функция Професси от гендера 
     randomWork: function() {
 
         //return this.randomWorkValue(this.workJson,10,1);
@@ -161,11 +167,14 @@ const personGenerator = {
 
     },  
 
+    //Функция года рождения из диапазона
      randomBirthYear: function() {
 
         return this.randomIntNumber(1920,2005);
 
     },
+
+    //Функция Даты и месяца рождения
      randomBirthDay: function() {
 
         month = (this.randomValue(this.monthJson));
@@ -194,12 +203,7 @@ const personGenerator = {
 
     },
 
-  
-
-
-
-
-    getPerson: function () {
+      getPerson: function () {
         this.person = {};
         // this.person.gender = this.randomGender();
         this.person.gender = this.randomGender();
