@@ -151,12 +151,30 @@ const personGenerator = {
     // функция отчетсва от гендера. 
      randomSecondName: function(gender) {
         //надо сделать более сложные условия, отчества не атк просто
-        //return (gender == 'Мужчина') ? this.randomValue(this.firstNameMaleJson)+'ович' : this.randomValue(this.firstNameMaleJson)+'вна';
-        
-        //попробуем по другому
-        return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,9,1) : this.randomWorkValue(this.secondNameJson,16,10);
+        secondName1=this.randomValue(this.firstNameMaleJson);
+         
+        //console.log(secondName1[secondName1.length-1]);
+        lastSecondName = (secondName1[secondName1.length-1]);
+        //console.log(lastSecondName);
+        switch (lastSecondName) {
+            case 'й':
+                return (gender == 'Мужчина') ? (secondName1.substring(0,secondName1.length-1) + 'евич') : (secondName1.substring(0,secondName1.length-1) + 'евна');
 
-       
+                break;
+
+            case 'а':
+                return (gender == 'Мужчина') ? (secondName1.substring(0,secondName1.length-1) + 'ич') : (secondName1.substring(0,secondName1.length-1) + 'ична');
+
+                break;
+        
+            default:
+                return (gender == 'Мужчина') ? secondName1 + 'ович' : secondName1 + 'овна';
+        
+                break;
+        }
+        //return (gender == 'Мужчина') ? this.randomValue(this.firstNameMaleJson)+'ович' : this.randomValue(this.firstNameMaleJson)+'вна';  
+        //попробуем по другому
+        //return (gender == 'Мужчина') ? this.randomWorkValue(this.secondNameJson,9,1) : this.randomWorkValue(this.secondNameJson,16,10);      
     },
 
     //функция Професси от гендера 
